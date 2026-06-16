@@ -12,16 +12,11 @@ while True:
     print('2 - Видео')
     print('3 - Фото')
     print("4 - Музыка")
-    run_local_cycle = True
-    type_file = None
-    while run_local_cycle:
+    while True:
         type_file = int(input("Введите номер типа файла: "))
-        for keys in tf.types.keys():
-            if keys == str(type_file):
-                run_local_cycle = False
-                break
-        else:
-            print("Такого номера нет. Попробуйте другой вариант.")
+        if tf.types.get(str(type_file)):
+            break
+        print("Такого номера не существует. Проверьте и попробуйте еще раз.")
     try:
         print("ВНИМАНИЕ! После отправки, все файлы, которые были перемещены в другую папку, они будут удалены в начальной папке (в которой были изначально)")
         answer = int(input("Выберите (согласны - 1, не согласны - 0): "))
