@@ -12,6 +12,7 @@ class MyApp(ctk.CTk):
         self.geometry('700x500')
         self.title("FileCleaner")
         self.resizable(False, False)
+        self.attributes('-topmost', True)
 
         # Заголовок FileCleaner
         CTkLabel(self, text='FileCleaner', font=("San Francisco", 30, 'bold')).grid(column=0, row=0, sticky="ew", pady=30)
