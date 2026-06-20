@@ -14,31 +14,31 @@ class MyApp(ctk.CTk):
         self.resizable(False, False)
 
         # Заголовок FileCleaner
-        CTkLabel(self, text='FileCleaner', font=("Helvetica", 30, 'italic')).grid(column=0, row=0, sticky="ew")
+        CTkLabel(self, text='FileCleaner', font=("San Francisco", 30, 'bold')).grid(column=0, row=0, sticky="ew", pady=30)
 
         # Ввод путей к папкам
-        self.folder_in = CTkEntry(self, placeholder_text="Путь исходной папки", width=200)
-        self.folder_in.grid(column=0, row=1, pady=30)
+        self.folder_in = CTkEntry(self, placeholder_text="Путь исходной папки", width=270, font=("San Francisco", 14, 'bold'))
+        self.folder_in.grid(column=0, row=1, padx=10)
 
-        self.folder_out = CTkEntry(self, placeholder_text="Путь конечной папки", width=200)
+        self.folder_out = CTkEntry(self, placeholder_text="Путь конечной папки", width=270, font=("San Francisco", 14, 'bold'))
         self.folder_out.grid(column=0, row=2)
 
         # Меню для выбора типа и расширения файлов
-        self.types_menu = CTkOptionMenu(self, values=['Документы и текст', 'Видео', 'Изображения', 'Музыка'], command=self.choice, width=250)
-        self.types_menu.grid(column=1, row=1, pady=10, padx=10)
+        self.types_menu = CTkOptionMenu(self, values=['Документы и текст', 'Видео', 'Изображения', 'Музыка'], command=self.choice, width=250, font=("San Francisco", 14, 'bold'))
+        self.types_menu.grid(column=1, row=1, padx=25, pady=30)
         self.types_menu.set("Выберите тип файла")
 
-        self.expansion = CTkOptionMenu(self, values=[],width=250)
-        self.expansion.grid(column=1, row=2)
+        self.expansion = CTkOptionMenu(self, values=[],width=250, font=("San Francisco", 14, 'bold'))
+        self.expansion.grid(column=1, row=2, padx=25)
         self.expansion.set('Выберите расширение файла')
 
         # Кнопка запуска выполнения функционала программы
-        self.start_button = CTkButton(self, text='Запуск программы', command=self.startProgramm)
-        self.start_button.grid(column=0, row=3, pady=10)
+        self.start_button = CTkButton(self, text='Запуск программы', command=self.startProgramm, font=("San Francisco", 14, 'bold'))
+        self.start_button.grid(column=0, row=3, pady=30)
 
         # Окошко с выводом
-        self.log_textbox = CTkTextbox(self, width=300, height=300)
-        self.log_textbox.grid(column=1, row=3, pady=10)
+        self.log_textbox = CTkTextbox(self, width=300, height=150, font=("San Francisco", 14, 'bold'))
+        self.log_textbox.grid(column=0, row=4, pady=30, padx=30)
 
     def choice(self, _value):
         match _value:
